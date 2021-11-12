@@ -40,3 +40,7 @@ $ yarn add @wfp/ui@alpha @wfp/icons@alpha  @wfp/icons-react@alpha  @wfp/layout@a
 ```
 
 4. Start storybook
+
+```bash
+npm run storybook
+```
