@@ -57,7 +57,7 @@ Attempting to install dependencies with npm may result in error due to the versi
 
 Add this custom Webpack configuration to .storybook/main.js. This should be a temporary bug, see this [GitHub issue](https://github.com/storybookjs/storybook/issues/1493#issuecomment-955190825) for more info.
 
-```
+```js
 module.exports = {
   ...
   webpackFinal: (config) => {
