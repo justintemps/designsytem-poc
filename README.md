@@ -4,13 +4,15 @@
 
 1. **Clone the repository**
 
+```bash
+git clone https://github.com/justintemps/designsytem-poc
+```
+
 2. **Install dependencies**
 
 ```bash
 yarn install
 ```
-
-Note: attempting to install dependencies with npm may result in error due to the version of React specified in UN Core peer dependencies.
 
 3. Start storybook
 
@@ -43,4 +45,44 @@ $ yarn add @wfp/ui@alpha @wfp/icons@alpha  @wfp/icons-react@alpha  @wfp/layout@a
 
 ```bash
 npm run storybook
+```
+
+## Troubleshooting
+
+### Peer dependency conflicts
+
+Attempting to install dependencies with npm may result in error due to the version of React specified in UN Core peer dependencies. **Installing dependencies with yarn seems to avoid this.**
+
+### Storybook can't load jsx/tsx files
+
+Add this custom Webpack configuration to .storybook/main.js. This should be a temporary bug, see this [GitHub issue](https://github.com/storybookjs/storybook/issues/1493#issuecomment-955190825) for more info.
+
+```
+module.exports = {
+  ...
+  webpackFinal: (config) => {
+    config.module.rules.push({
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      use: [
+        {
+          loader: require.resolve("babel-loader"),
+          options: {
+            presets: [
+              [
+                require("@babel/preset-react").default,
+                { runtime: "automatic" },
+              ],
+              require("@babel/preset-env").default,
+            ],
+          },
+        },
+      ],
+    });
+
+    config.resolve.extensions.push(".js", ".jsx");
+
+    return config;
+  },
+};
 ```
