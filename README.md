@@ -5,7 +5,7 @@
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/justintemps/designsytem-poc
+git clone https://github.com/justintemps/designsytem-poc.git
 ```
 
 2. **Install dependencies**
@@ -20,69 +20,47 @@ yarn install
 npm run storybook
 ```
 
-## How to recreate this POC
+## Link to Local Version of UN Core
 
-1. **Bootstrap React project**
-
-```bash
-$ npx create-react-app designsystem-poc
-```
-
-2. **Install Storybook**
+1. **Clone the repository**
 
 ```bash
-$ cd designsystem-poc
-$ npx sb init
+git clone https://github.com/un-core/designsystem.git
 ```
 
-3. **Install UN Core**
+2. **Install dependencies**
 
 ```bash
-$ yarn add @wfp/ui@alpha @wfp/icons@alpha  @wfp/icons-react@alpha  @wfp/layout@alpha  @wfp/styles@alpha  @wfp/themes@alpha  @wfp/type@alpha
+yarn install
 ```
 
-4. Start storybook
+3. **Build the project**
 
 ```bash
-npm run storybook
+yarn build
 ```
 
-## Troubleshooting
+4. **Create symlinks to all of the packages**
 
-### Peer dependency conflicts
+```bash
+lerna exec -- yarn link
+```
 
-Attempting to install dependencies with npm may result in error due to the version of React specified in UN Core peer dependencies. **Installing dependencies with yarn seems to avoid this.**
+5. **Move to Design System POC Repo**
 
-### Storybook can't load jsx/tsx files
+```bash
+yarn link @wfp/icons
+yarn link @wfp/icons-react
+yarn link @wfp/layout
+yarn link @wfp/styles
+yarn link @wfp/themes
+yarn link @wfp/type
+yarn link @wfp/ui
+```
 
-Add this custom Webpack configuration to .storybook/main.js. This should be a temporary bug, see this [GitHub issue](https://github.com/storybookjs/storybook/issues/1493#issuecomment-955190825) for more info.
+You may need to reinstall dependencies after this step. Recommend removing node_modules and yarn.lock files before doing that.
 
-```js
-module.exports = {
-  ...
-  webpackFinal: (config) => {
-    config.module.rules.push({
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      use: [
-        {
-          loader: require.resolve("babel-loader"),
-          options: {
-            presets: [
-              [
-                require("@babel/preset-react").default,
-                { runtime: "automatic" },
-              ],
-              require("@babel/preset-env").default,
-            ],
-          },
-        },
-      ],
-    });
-
-    config.resolve.extensions.push(".js", ".jsx");
-
-    return config;
-  },
-};
+```bash
+rm -rf node_modules yarn.lock
+yarn install
 ```
