@@ -1,3 +1,5 @@
+import ILOProvider from "../src/components/ILOProvider";
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -6,4 +8,12 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+};
+
+const withILOThemeProvider = (Story) => (
+  <ILOProvider>
+    <Story />
+  </ILOProvider>
+);
+
+export const decorators = [withILOThemeProvider];

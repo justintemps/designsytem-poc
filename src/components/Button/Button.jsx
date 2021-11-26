@@ -1,17 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button as Btn } from "@wfp/ui";
+import { Button as UNButton } from "@wfp/ui";
 import "@wfp/styles/scss/components/button/_index.scss";
 import "./button.scss";
 
-export const Button = ({ children, ...props }) => {
+const Button = ({ children, ...props }) => {
   return (
-    <Btn primary {...props}>
+    <UNButton kind="primary" {...props}>
       {children}
-    </Btn>
+    </UNButton>
   );
 };
 
 Button.propTypes = {
   children: PropTypes.node,
 };
+
+export default Button;
