@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button as UNButton } from "@wfp/ui";
-import "@wfp/styles/scss/components/button/_index.scss";
+import { Button as UNButton } from "@un/react";
+import "@un/styles/scss/components/button/_index.scss";
 import "./button.scss";
 
 const Button = ({ children, ...props }) => {

@@ -49,13 +49,13 @@ lerna exec -- yarn link
 5. **Move to Design System POC Repo**
 
 ```bash
-yarn link @wfp/icons
-yarn link @wfp/icons-react
-yarn link @wfp/layout
-yarn link @wfp/styles
-yarn link @wfp/themes
-yarn link @wfp/type
-yarn link @wfp/ui
+yarn link @un/icons
+yarn link @un/icons-react
+yarn link @un/layout
+yarn link @un/styles
+yarn link @un/themes
+yarn link @un/type
+yarn link @un/react
 ```
 
 You may need to reinstall dependencies after this step. Recommend removing node_modules and yarn.lock files before doing that.

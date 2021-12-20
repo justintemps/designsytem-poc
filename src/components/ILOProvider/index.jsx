@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { UNCoreProvider } from "@wfp/ui";
+import { UNCoreProvider } from "@un/react";
 import theme from "../../theme.json";
 
 const ILOProvider = ({ children }) => (
