@@ -1,5 +1,7 @@
 # UN Core-based Design System POC
 
+This project is meant to illustrate how to create a design system using [UN Core](https://github.com/un-core/designsystem). It also has pointers for using a local symlinked version of UN Core for development of the same.
+
 ## Install
 
 1. **Clone the repository**
@@ -8,21 +10,21 @@
 git clone https://github.com/justintemps/designsytem-poc.git
 ```
 
-2. **Install dependencies**
+2. **Bootstrap project**
 
 ```bash
-yarn install
+yarn setup-dev
 ```
 
 3. Start storybook
 
 ```bash
-npm run storybook
+yarn storybook
 ```
 
-## Link to Local Version of UN Core
+## Use local version of UN Core for development
 
-1. **Clone the repository**
+1. **Clone the UN Core monorepo**
 
 ```bash
 git clone https://github.com/un-core/designsystem.git
@@ -31,7 +33,7 @@ git clone https://github.com/un-core/designsystem.git
 2. **Install dependencies**
 
 ```bash
-yarn install
+yarn
 ```
 
 3. **Build the project**
@@ -49,6 +51,18 @@ lerna exec -- yarn link
 5. **Move to Design System POC Repo**
 
 ```bash
+cd design-system-poc
+```
+
+6. **Clean dependencies**
+
+```bash
+yarn clean
+```
+
+7. **Add symlinks**
+
+```bash
 yarn link @un/icons
 yarn link @un/icons-react
 yarn link @un/layout
@@ -58,9 +72,8 @@ yarn link @un/type
 yarn link @un/react
 ```
 
-You may need to reinstall dependencies after this step. Recommend removing node_modules and yarn.lock files before doing that.
+8. **Reinstall dependencies**
 
 ```bash
-rm -rf node_modules yarn.lock
-yarn install
+yarn
 ```

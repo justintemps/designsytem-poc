@@ -1,8 +1,30 @@
 {
   "name": "designsystem-poc",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1",
+  "description": "A proof of concept for a design system based on un-core",
+  "main": "index.js",
+  "scripts": {
+    "setup-dev": "yarn && yarn bootstrap",
+    "clean": "rm -rf node_modules yarn.lock && lerna exec -- rm yarn.lock && lerna clean --yes",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "storybook": "cd packages/react && yarn storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justintemps/designsytem-poc.git"
+  },
+  "author": "@justintemps",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/justintemps/designsytem-poc/issues"
+  },
+  "homepage": "https://github.com/justintemps/designsytem-poc#readme",
   "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -14,54 +36,8 @@
     "@un/styles": "^10.26.8",
     "@un/themes": "^10.40.6",
     "@un/type": "^10.30.8",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "lerna": "^4.0.0",
     "react-scripts": "4.0.3",
     "sass": "^1.45.0"
-  },
-  "devDependencies": {
-    "@storybook/addon-actions": "^6.3.12",
-    "@storybook/addon-essentials": "^6.3.12",
-    "@storybook/addon-links": "^6.3.12",
-    "@storybook/node-logger": "^6.3.12",
-    "@storybook/preset-create-react-app": "^3.1.7",
-    "@storybook/react": "^6.3.12",
-    "@storybook/testing-react": "^1.0.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.stories.*"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
