@@ -1,0 +1,14 @@
+{
+  "name": "@example/designsystem-poc-styles",
+  "version": "0.1.0",
+  "description": "Styles for our design system",
+  "author": "@justintemps",
+  "license": "MIT",
+  "files": [
+    "es",
+    "lib",
+    "scss",
+    "src",
+    "umd"
+  ]
+}

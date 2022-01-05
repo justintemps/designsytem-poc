@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "bootstrap": "yarn && lerna bootstrap",
-    "bootstrap:dev": "yarn clean && yarn link-deps & yarn bootstrap",
+    "bootstrap:dev": "yarn clean && yarn link-deps && yarn bootstrap",
     "build": "lerna run build",
-    "clean": "rm -rf node_modules yarn.lock && lerna exec -- rm yarn.lock --force && lerna clean --yes",
+    "clean": "rm -rf node_modules yarn.lock && lerna exec -- rm yarn.lock || true && lerna clean --yes",
     "link-deps": "yarn link @un/icons @un/icons-react @un/layout @un/styles @un/themes @un/type @un/react",
     "start": "yarn storybook",
     "storybook": "cd packages/react && yarn storybook"
