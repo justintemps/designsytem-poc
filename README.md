@@ -28,10 +28,12 @@ yarn start
 
 ## Use local version of UN Core for development
 
-1. **Clone the UN Core monorepo in a separate directory**
+1. **Clone the [UN Core monorepo](https://github.com/un-core/designsystem) in a separate directory**
+
+Assuming you're in the POC directory..
 
 ```bash
-git clone https://github.com/un-core/designsystem.git
+cd .. && git clone https://github.com/un-core/designsystem.git
 ```
 
 2. **Install dependencies**
@@ -55,29 +57,13 @@ lerna exec -- yarn link
 5. **Move to Design System POC Repo**
 
 ```bash
-cd design-system-poc
+cd ../design-system-poc
 ```
 
-6. **Clean dependencies**
+6. **Reinstall symlinked dependencies**
+
+This will clean up old dependencies if there are any, link to the dependencies you symlinked in Step 4 and reinstall dependencies for all packages
 
 ```bash
-yarn clean
-```
-
-7. **Add symlinks**
-
-```bash
-yarn link @un/icons
-yarn link @un/icons-react
-yarn link @un/layout
-yarn link @un/styles
-yarn link @un/themes
-yarn link @un/type
-yarn link @un/react
-```
-
-8. **Reinstall dependencies**
-
-```bash
-yarn bootstrap
+yarn bootstrap:dev
 ```
