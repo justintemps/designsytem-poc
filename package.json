@@ -4,10 +4,10 @@
   "description": "A proof of concept for a design system based on un-core",
   "main": "index.js",
   "scripts": {
-    "setup-dev": "yarn && yarn bootstrap",
-    "clean": "rm -rf node_modules yarn.lock && lerna exec -- rm yarn.lock && lerna clean --yes",
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "yarn && lerna bootstrap",
     "build": "lerna run build",
+    "clean": "rm -rf node_modules yarn.lock && lerna exec -- rm yarn.lock && lerna clean --yes",
+    "start": "yarn storybook",
     "storybook": "cd packages/react && yarn storybook"
   },
   "repository": {

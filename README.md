@@ -1,5 +1,7 @@
 # UN Core-based Design System POC
 
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+
 This project is meant to illustrate how to create a design system using [UN Core](https://github.com/un-core/designsystem). It also has pointers for using a local symlinked version of UN Core for development of the same.
 
 ## Install
@@ -12,19 +14,21 @@ git clone https://github.com/justintemps/designsytem-poc.git
 
 2. **Bootstrap project**
 
+This will install shared dependencies plus all dependencies particular to each package. This may take a while and you won't see much output, but be patient, it's working...
+
 ```bash
-yarn setup-dev
+yarn bootstrap
 ```
 
 3. Start storybook
 
 ```bash
-yarn storybook
+yarn start
 ```
 
 ## Use local version of UN Core for development
 
-1. **Clone the UN Core monorepo**
+1. **Clone the UN Core monorepo in a separate directory**
 
 ```bash
 git clone https://github.com/un-core/designsystem.git
@@ -75,5 +79,5 @@ yarn link @un/react
 8. **Reinstall dependencies**
 
 ```bash
-yarn
+yarn bootstrap
 ```
