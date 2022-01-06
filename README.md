@@ -20,7 +20,7 @@ This will install shared dependencies plus all dependencies particular to each p
 yarn bootstrap
 ```
 
-3. Start storybook
+3. **Start storybook**
 
 ```bash
 yarn start
@@ -54,7 +54,7 @@ yarn build
 lerna exec -- yarn link
 ```
 
-5. **Move to Design System POC Repo**
+5. **Move back to Design System POC Repo**
 
 ```bash
 cd ../design-system-poc
