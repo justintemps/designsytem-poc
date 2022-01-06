@@ -4,24 +4,3 @@
 $prefix: "ilo";
 $css--body: true;
 $css--reset: true;
-
-// Colors are deprecated in @un/styles and shouldn't be used
-// @forward "@un/styles/scss/colors" hide $white;
-
-// The default reset from @ibm/carbon
-@use "@un/styles/scss/reset";
-
-@forward "@un/styles/scss/font-face";
-@forward "@un/styles/scss/type";
-
-@forward "@un/styles/scss/grid";
-@forward "@un/styles/scss/motion";
-
-@forward "@un/styles/scss/themes";
-@forward "@un/styles/scss/theme";
-
-@use "@un/styles/scss/components";
-
-button {
-  border: 1px solid red;
-}

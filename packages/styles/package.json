@@ -10,5 +10,9 @@
     "scss",
     "src",
     "umd"
-  ]
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "sass": "^1.46.0"
+  }
 }
