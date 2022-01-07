@@ -1,2 +1,17 @@
-@import "./settings";
-@import "@un/styles";
+$css--body: true;
+$css--reset: true;
+
+@use "@un/styles" with (
+  $prefix: "ilo"
+);
+
+@use "@un/themes/scss/themes" as themes with (
+  $custom-property-prefix: "ilo"
+);
+
+$carbon--theme: themes.$carbon--theme--wfp;
+
+:root {
+  @include themes.carbon--theme(themes.$carbon--theme--wfp, true) {
+  }
+}
