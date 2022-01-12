@@ -2,68 +2,21 @@
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
-This project is meant to illustrate how to create a design system using [UN Core](https://github.com/un-core/designsystem). It also has pointers for using a local symlinked version of UN Core for development of the same.
+This project is meant to illustrate how to create a design system using [UN Core](https://github.com/un-core/designsystem).
 
-## Install
+## Installation
 
-1. **Clone the repository**
+Follow the [installation Instructions](./docs/installation) to get this project up and running. These include instructions for developing with a local version of UN Core.
 
-```bash
-git clone https://github.com/justintemps/designsytem-poc.git
-```
+## Packages
 
-2. **Bootstrap project**
+- [react](./packages/react/README.md)
+- [styles](./packages/styles/README.md)
 
-This will install shared dependencies plus all dependencies particular to each package. This may take a while and you won't see much output, but be patient, it's working...
+## Architecture
 
-```bash
-yarn bootstrap
-```
+The project is a monorepo which separates the different aspects and implementations of the design system into different packages. This architecture mirrors that of UN Core and allows packages to share dependencies and functionality.
 
-3. **Start storybook**
+For example, both the `react` package and the `twig` package would both have a dependency on the same `style` and `fonts` packages. Updating styles for the `react` package would also update styles in the `twig` package. (Note: only examples for a `react` and `twig` package are provided here).
 
-```bash
-yarn start
-```
-
-## Use local version of UN Core for development
-
-1. **Clone the [UN Core monorepo](https://github.com/un-core/designsystem) in a separate directory**
-
-Assuming you're in the POC directory..
-
-```bash
-cd .. && git clone https://github.com/un-core/designsystem.git
-```
-
-2. **Install dependencies**
-
-```bash
-yarn
-```
-
-3. **Build the project**
-
-```bash
-yarn build
-```
-
-4. **Create symlinks to all of the packages**
-
-```bash
-lerna exec -- yarn link
-```
-
-5. **Move back to Design System POC Repo**
-
-```bash
-cd ../design-system-poc
-```
-
-6. **Reinstall symlinked dependencies**
-
-This will clean up old dependencies if there are any, link to the dependencies you symlinked in Step 4 and reinstall dependencies for all packages
-
-```bash
-yarn bootstrap:dev
-```
+At the same time, this allows consumers to pick and choose the packages that they need. A project that doesn't use `react` or `twig` packages can still use the `style` and `fonts` package.
