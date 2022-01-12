@@ -6,7 +6,7 @@ This project is meant to illustrate how to create a design system using [UN Core
 
 ## Installation
 
-Follow the [installation Instructions](./docs/installation) to get this project up and running. These include instructions for developing with a local version of UN Core.
+Follow the [installation Instructions](./docs/installation.md) to get this project up and running. These include instructions for developing with a local version of UN Core.
 
 ## Packages
 
