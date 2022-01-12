@@ -5,7 +5,6 @@ lib
 umd
 next
 source
-docs
 !src/assets
 css
 dist
