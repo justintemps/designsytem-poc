@@ -10,9 +10,9 @@ Follow the [installation Instructions](./docs/installation.md) to get this proje
 
 ## Packages
 
-- [react](./packages/react/README.md)
-- [styles](./packages/styles/README.md)
-- [fonts](./packages/styles/README.md)
+- [react](./packages/react)
+- [styles](./packages/styles)
+- [fonts](./packages/styles)
 
 ## Architecture
 
