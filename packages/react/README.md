@@ -17,7 +17,7 @@ const ILOProvider = ({ children }) => (
 );
 ```
 
-This is implemented here in the [Storybook project](packages/react/.storybook/preview.js).
+Currently the `<UNCoreProvider />` accepts a single required prop `prefix` a string which is used to set the prefix for all of the component classes.
 
 ## Styling
 
