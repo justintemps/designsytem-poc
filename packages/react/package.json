@@ -2,18 +2,18 @@
   "name": "@example/designsystem-poc-react",
   "version": "0.4.0",
   "dependencies": {
-    "@craco/craco": "^6.4.3",
     "@example/designsystem-poc-fonts": "^0.4.0",
     "@example/designsystem-poc-styles": "^0.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "storybook-preset-craco": "^0.0.6"
+    "react-scripts": "5.0.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.4.12",
     "@storybook/addon-essentials": "^6.4.12",
     "@storybook/addon-links": "^6.4.12",
+    "@storybook/builder-webpack5": "^6.4.12",
+    "@storybook/manager-webpack5": "^6.4.12",
     "@storybook/node-logger": "^6.4.12",
     "@storybook/preset-create-react-app": "^4.0.0",
     "@storybook/preset-scss": "^1.0.3",
