@@ -10,7 +10,6 @@ This is just a POC, so the package doesn't expose components or include a build 
 
 ```js
 import { UNCoreProvider } from "@un/react";
-import theme from "../../theme.json";
 
 const ILOProvider = ({ children }) => (
   <UNCoreProvider prefix="ilo">{children}</UNCoreProvider>
