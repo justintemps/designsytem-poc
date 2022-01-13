@@ -13,7 +13,7 @@ import { UNCoreProvider } from "@un/react";
 import theme from "../../theme.json";
 
 const ILOProvider = ({ children }) => (
-  <UNCoreProvider {...theme}>{children}</UNCoreProvider>
+  <UNCoreProvider prefix="ilo">{children}</UNCoreProvider>
 );
 ```
 
