@@ -2,6 +2,12 @@
 $css--body: true;
 $css--reset: true;
 
+// This has to come first, because
+// @un/type is a dependency of several other @un packages. We
+// won't be able to reset its variables if the package has already
+// been imported
+@forward "typography";
+
 // Set prefix on default styles
 @use "@un/styles/scss/config" with (
   $prefix: "ilo"
