@@ -41,3 +41,12 @@ This package includes a subset of [Overpass](https://fonts.google.com/specimen/O
 | "Noto Sans" | normal      | italic     | NotoSans-Italic         |
 | "Noto Sans" | 700         | normal     | NotoSans-Bold           |
 | "Noto Sans" | 700         | italic     | NotoSans-BoldItalic     |
+
+### Formats
+
+All fonts-face declarations include files in the following formats:
+
+- `.eot`
+- `.woff`
+- `.woff2`
+- `.ttf`
